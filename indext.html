@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dylan's Website</title>
+    <style>
+      /* --- Default Light Mode Styles --- */
+      body { 
+        font-family: Arial, sans-serif; 
+        max-width: 800px;
+        margin: 0 auto; 
+        padding: 20px; 
+        background: #f5f5f5; 
+        color: #333333; /* Added dark text color for contrast */
+        transition: background 0.3s, color 0.3s; /* Makes the switch smooth */
+      }
+      h1 { color: #1f4e79; }
+      h2 { color: #2e75b6; border-bottom: 2px solid #2e75b6; }
+      p { line-height: 1.6; } /* Fixed a typo here ("list-style" to "line-height") */
+      
+      /* Style for the theme toggle button */
+      .toggle-btn {
+        padding: 10px 15px;
+        font-size: 14px;
+        cursor: pointer;
+        background-color: #1f4e79;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        margin-bottom: 20px;
+      }
+
+      /* --- Dark Mode Styles --- */
+      /* When the body has the "dark-mode" class, these styles override the ones above */
+      body.dark-mode {
+        background: #1e1e1e;
+        color: #f5f5f5;
+      }
+      body.dark-mode h1 { color: #5b9bd5; }
+      body.dark-mode h2 { color: #70ad47; border-bottom: 2px solid #70ad47; }
+      body.dark-mode .toggle-btn { background-color: #70ad47; color: #1e1e1e; }
+      body.dark-mode a { color: #5b9bd5; } /* Makes links easier to read in dark mode */
+    </style>
+  </head>
+  <body>
+
+    <button class="toggle-btn" id="themeToggle">Switch to Dark Mode</button>
+
+    <h1>Hi, I'm Dylan!</h1>
+
+    <h2>About Me</h2>
+    <p>I'm in 9th grade at Energy Technical High School</p>
+    
+    <h2>My Interests</h2>
+    <p>I enjoy: Going to the gym, Skateboarding, Playing Volleyball</p>
+    
+    <h2>My Goals For This Course</h2>
+    <p>A website perchance</p>
+    
+    <h2>My GitHub</h2>
+    <p>Check out my projects:
+        <a href="https://github.com/Grusomebat">Grusomebat</a>
+    </p>
+    
+    <h2>My Other Projects</h2>
+    <p>My Code.org app 
+      <a href="https://studio.code.org/projects/applab/251533e7-8256-4f56-ad1c-6abc39950755">Code.org</a>
+      <a href="https://cad.onshape.com/documents/4999c0c30a09a5ef9741aed7/w/60aede5f6d586208ac4c9303/e/34a7c493d789bfd8c0c64807?renderMode=0&uiState=6a2ac252ce85eb529051c3e6">Onshape</a>
+    </p>
+
+    <script>
+      const toggleButton = document.getElementById('themeToggle');
+      
+      toggleButton.addEventListener('click', () => {
+        // This toggles the "dark-mode" class on or off the body tag
+        document.body.classList.toggle('dark-mode');
+        
+        // This updates the text inside the button so the user knows what happens next
+        if (document.body.classList.contains('dark-mode')) {
+          toggleButton.textContent = 'Switch to Light Mode';
+        } else {
+          toggleButton.textContent = 'Switch to Dark Mode';
+        }
+      });
+    </script>
+  </body>
+</html>
